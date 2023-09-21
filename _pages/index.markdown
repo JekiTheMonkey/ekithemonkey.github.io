@@ -5,3 +5,11 @@
 layout: home
 permalink: /
 ---
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% include paginator.html %}
