@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 
 
 title: Antonio Sidenko
