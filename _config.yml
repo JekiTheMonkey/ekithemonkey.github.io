@@ -30,6 +30,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: JekiTheMonkey
 
+paginate: 5
+paginate_path: "/page:num/"
+
 # Build settings
 # theme: minimal-mistakes-jekyll
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
@@ -42,6 +45,7 @@ plugins:
   - jekyll-include-cache
   - jekyll-algolia
   - jekyll-admin
+  - jekyll-toc
 
 # Exclude from processing.
 # The following items will not be processed, by default.
