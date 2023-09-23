@@ -37,9 +37,9 @@ The struct that I use to load inventory data from is called `FMTD_InventorySave`
 `FMTD_InventorySave` saved on my `AMTD_PlayerController`, and dispatches the struct.
 
 Seems simple enough, however the question is where do I get the `FMTD_InventorySave` from. When the player joins the
-world for the first time depending on the player net mode I do different things. When the host player enters the game
-the inventory save is read from the save file, while the client player sends it in JSON format through connection
-options string.
+world for the first time I do different things depending on the player net mode. If the joining player is the host,
+the inventory save is read from the save file, while the clients send it in JSON format through connection options 
+string.
 
 # The problem
 
@@ -146,14 +146,12 @@ So there's this little exception where the problem doesn't exist. So, let's take
 
 A listen server with 1 client tries to seamlessly travel to a new map.
 
-Listen server-side user loads into the map, the
-`AGameModeBase::HandleSeamlessTravelPlayer(AController*& C)` is executed, creating a copy of the `PC` and `PS` for
-that user and registering them as game feature receivers, executes `SeamlessTravelTo()` and `SeamlessTravelFrom()`
-passing
-the persistent information, and after
-<i>some</i> time the experience loads granting all the game features to our `PC` and `PS`, which leads into creating
-the inventory, which does have the `FMTD_InventorySave` passed in the `SeamlessTravelTo()`, and it can easily load
-the persistent inventory. Everything's perfect!
+Listen server-side user loads into the map, the `AGameModeBase::HandleSeamlessTravelPlayer()` is executed, creating a 
+copy of the `PC` and `PS` for that user and registering them as game feature receivers, executes `SeamlessTravelTo()` 
+and `SeamlessTravelFrom()` passing the persistent information, and after <i>some</i> time the experience loads granting 
+all the game features to our `PC` and `PS`, which leads into creating the inventory, which does have the 
+`FMTD_InventorySave` passed in the `SeamlessTravelTo()`, and it can easily load the persistent inventory. Everything's 
+perfect!
 
 Client user loads into the map some time later, after the experience is loaded, and does the exact same thing, but 
 after they register the `PC` and `PS` as game feature receivers, they would immediately get the inventory and other 
