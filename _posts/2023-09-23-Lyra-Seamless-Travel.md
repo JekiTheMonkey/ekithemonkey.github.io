@@ -2,6 +2,7 @@
 layout: single
 toc: true
 title: 'Lyra Seamless Travel'
+description: 'Problems with seamless travel in Lyra'
 date: 2023-09-23
 permalink: /posts/2023/09/Lyra Seamless Travel/
 tags:
@@ -191,8 +192,8 @@ Hopefully I've explained the initialization problem as clear as possible.
 After realising the problem, it's important to think what we have to do to fix it. 
 
 I like the original engine approach to pass the persistent data, so I followed that making a few modifications to how 
-the `PC` and `PS` are created, creating more room for custom initialization prior to the registering `PC` and `PS` as 
-game feature receivers.
+the `PC` and `PS` are created, creating more room for custom initialization prior to registering `PC` and `PS` as game 
+feature receivers.
 
 ## Original player controller initialization
 
@@ -491,7 +492,7 @@ void AMTD_PlayerController::InitPlayerState()
 }
 ```
 
-The method became way bigger that the original one because I tend to rewrite things in the easiest way to debug as 
+The method became way bigger than the original one because I tend to rewrite things in the easiest way to debug as 
 possible. However in here we're interested in 2 main things:
 
 - `PS` is spawned deferred (note `SpawnInfo.bDeferConstruction = true`), then we broadcast the 
@@ -532,7 +533,7 @@ void AMTD_GameMode::OnPlayerStateSpawnedDeferred_OnSeamlessTravel(AMTD_PlayerCon
 
 That's the final puzzle to the problem! Here we finish the `SeamlessTravel` calls and swap the `PC`s. In the original 
 implementation that's done after the `AGameModeBase::SpawnPlayerControllerCommon()` call, while we do that
-<i>inside</i>! That's how the two methods look like:
+inside! That's how the two methods look like:
 
 ```c++
 void AMTD_PlayerController::SeamlessTravelTo_PlayerStateDeferred(AMTD_PlayerController* NewPlayerController)
@@ -559,11 +560,11 @@ void AMTD_PlayerController::SeamlessTravelFrom_PlayerStateDeferred(AMTD_PlayerCo
 
 After all that logic took place (`PC` and `PS` creation, as well as the seamless initialization) we'll finish the 
 `SpawnPlayerControllerCommon()` execution inside the `AMTD_GameMode::HandleSeamlessTravelPlayer()`, and carry on 
-initializing other player controllers of the players that are following our seamless travel.
+initializing other player controllers that are following our seamless travel.
 
 ## New pseudo stack trace
 
-With all of that out of the way let's take a look on the new pseudo stack trace in case of any player (i.e. the
+With all of that out of the way let's take a look at the new pseudo stack trace in case of any player (i.e. the
 calls are the same for server and clients):
 
 ```c++
@@ -594,7 +595,7 @@ AMTD_GameModeBase::HandleSeamlessTravelPlayer()
 
 # Tip for original seamless travel functions
 
-Also, to make sure that the original `SeamlessTravel` functions are not called accidentally by <i>something</i> you can
+To make sure that the original `SeamlessTravel` functions are not called accidentally by <i>something</i> you can 
 override them the following way:
 
 ```c++
