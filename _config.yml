@@ -20,7 +20,7 @@
 
 # theme: minimal-mistakes-jekyll
 
-title: Antonio Sidenko
+title: JekiTheMonkey
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -47,6 +47,8 @@ plugins:
   - jekyll-admin
   - jekyll-toc
 
+footer:
+  title: Antonio Sidenko
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
