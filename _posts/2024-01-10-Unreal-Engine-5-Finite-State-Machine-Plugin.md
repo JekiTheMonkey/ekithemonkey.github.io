@@ -35,7 +35,7 @@ BTs, and it's a shame that they were dropped with UE4. The system was pretty pow
 new states and blocking transitions to specific states. It also supported coroutines in certain functions, allowing 
 developers to easily create complex behavior without writing excessive boilerplate code to preserve certain states.
 
-Since I prefer UE's 3 Finite-State Machine (FSM) over BTs to do my job, I decided to port it to UE5 myself. The 
+Since I prefer UE's 3 FSM over BTs to do my job, I decided to port it to UE5 myself. The 
 [plugin](https://github.com/Tonetfal/UE5FSM) ended up to be similar to UE's 3 FSM, and it should contain all its 
 features, however it has some additional features that I personally consider useful. There's an important point to 
 mention - the development is mainly focused in C++. There's some BP interaction, but it doesn't have anything to do 
@@ -98,10 +98,11 @@ present on it. Other than that, there are no additional stack-related restrictio
 Returning to the previous example, our AI gets hurt while seeking for an enemy. Instead of transitioning to the hurt
 state, we can push it on the stack. After finishing the hurt animation, it pops itself, leaving us with the same state 
 it transitioned to the hurt state from. This approach also works if the AI gets stunned. Pushing the hurt state on 
-top of the stunned state results in a return to the stunned state afterwards. It's a powerful mechanism that allows 
-ignoring the state being pushed. GotoState approach were used, one would need to remember the previous state and use
-GotoState with that one after finishing the Hurt state. This operation becomes cumbersome considering how often states
-are pushed.
+top of the stunned state results in a return to the stunned state afterwards. 
+
+It's a powerful mechanism that allows ignoring the state being pushed. GotoState approach were used, one would need to 
+remember the previous state and use GotoState with that one after finishing the Hurt state. This operation becomes 
+cumbersome considering how often states are pushed.
 
 ## Closing thoughts
 
