@@ -1,4 +1,6 @@
 # main links
 main:
+  - title: "UE5FSM"
+    url: https://github.com/Tonetfal/UE5FSM
   - title: "Snippets"
     url: https://github.com/Tonetfal/UnrealSnippets
