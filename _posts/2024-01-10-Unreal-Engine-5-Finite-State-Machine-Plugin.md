@@ -111,4 +111,5 @@ establishes a clear border between states and allows creating separate logic for
 structures. 
 
 Visit the [plugin's Github page](https://github.com/Tonetfal/UE5FSM) to learn more about it, as it has 
-comprehensive documentation. This article didn't include any real examples, but we'll cover that in the future.
+comprehensive documentation. This article didn't include any real examples, but we'll cover that in the 
+[future](2024-01-16-AI-Development-Using-UE5FSM.md).
