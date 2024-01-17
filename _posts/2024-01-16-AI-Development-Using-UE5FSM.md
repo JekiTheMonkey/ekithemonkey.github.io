@@ -154,7 +154,7 @@ AI Controller.
 Try to compile, and see whether it gives any error. If it doesn't you're good to go!
 
 ```
-UE5FSM used in this article is v1.3.0-alpha. If you happen to read the article with newer version out there, some code might look different.
+UE5FSM used in this article is v1.3.1-alpha. If you happen to read the article with newer version out there, some code might look different.
 ```
 
 ## Code setup
@@ -172,6 +172,8 @@ inherit them, but also cache some of the useful data we'll be using down the roa
 it shorthands a lot of expressions saving you a lot of time in the future.
 
 ```c++
+using namespace UE5Coro;
+
 UCLASS(Abstract)
 class DEMOUE5FSM_API UDemo_BossState
 	: public UMachineState
