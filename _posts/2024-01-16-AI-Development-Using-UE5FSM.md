@@ -13,7 +13,7 @@ tags:
 
 # Introduction
 
-In this article we'll show an example of how to make an AI for a multiplayer horror game that using my own tool called 
+In this article we'll show an example of how to make an AI for a multiplayer horror game using my own tool called 
 [UE5FSM](https://github.com/Tonetfal/UE5FSM), which is a powerful way of creating stateful logic such as AI. 
 Its quick overview was already done in [another article](2024-01-10-Unreal-Engine-5-Finite-State-Machine-Plugin.md). 
 
