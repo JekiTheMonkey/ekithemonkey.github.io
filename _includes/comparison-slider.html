@@ -1,6 +1,10 @@
 <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
 <style>
+  .slider-example-split-line {
+    --divider-width: 4px;
+  }
+
   .before,
   .after {
     margin: 0;
@@ -29,7 +33,7 @@
   }
 </style>
 
-<img-comparison-slider>
+<img-comparison-slider class="slider-example-split-line">
   <figure slot="first" class="before">
     <img width="100%" src="{{ site.url }}/{{ include.first_image }}">
     <figcaption>{{ include.first_image_description | default: "Before" }}</figcaption>
