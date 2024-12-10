@@ -183,8 +183,15 @@ Some actors that have a replicated timeline require you to set the dormancy to A
 playing, and to Dormant All when it's finished. Other than that, my setup didn't require any other actions to get 
 the dormancy working on all my replicated actors.
 
-With this tweak, I lowered my game thread from around 5ms to around 2.5ms in almost no time. I didn't run a lot of 
-profiling on this one either, but these are rough numbers of what I was getting before and what I got right now.
+With this tweak, I lowered my game thread from around 5ms to around 1.5ms in almost no time. Note that these numbers
+were gathered when running the listen-server with 3 connected players with no actions going on, e.g. player characters
+spawned into the world, and are not doing absolutely anything.
+
+![mess-network-dormancy-0.jpg](/assets/images/mess-network-dormancy-0.jpg)
+![mess-network-dormancy-1.jpg](/assets/images/mess-network-dormancy-1.jpg)
+
+I didn't run a lot of profiling on this one either, but these are rough numbers of what I was getting before and what 
+I got right now.
 
 It's always possible to optimize even further using relevancy and other techniques, but the performance gain/time 
 spent ratio would be way lower to what I got with dormancy.
