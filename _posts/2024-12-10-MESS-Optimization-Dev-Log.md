@@ -143,18 +143,59 @@ that as a default launch argument in Steam Works, but I still use DX12 in the ed
 Baking with default settings Lightmass comes with takes around half an hour if not more on my RTX 3060, but the 
 result is perfect. Here's the comparison between CPU Preview and Default Lightmass.
 
-![mess-baking-cpu-preview-01.jpg](/assets/images/mess-baking-cpu-preview-01.jpg)
-![mess-baking-lightmass-default-01.jpg](/assets/images/mess-baking-lightmass-default-01.jpg)
-![mess-baking-cpu-preview-02.jpg](/assets/images/mess-baking-cpu-preview-02.jpg)
-![mess-baking-lightmass-default-02.jpg](/assets/images/mess-baking-lightmass-default-02.jpg)
-![mess-baking-cpu-preview-03.jpg](/assets/images/mess-baking-cpu-preview-03.jpg)
-![mess-baking-lightmass-default-03.jpg](/assets/images/mess-baking-lightmass-default-03.jpg)
-![mess-baking-cpu-preview-04.jpg](/assets/images/mess-baking-cpu-preview-04.jpg)
-![mess-baking-lightmass-default-04.jpg](/assets/images/mess-baking-lightmass-default-04.jpg)
-![mess-baking-cpu-preview-05.jpg](/assets/images/mess-baking-cpu-preview-05.jpg)
-![mess-baking-lightmass-default-05.jpg](/assets/images/mess-baking-lightmass-default-05.jpg)
-![mess-baking-cpu-preview-06.jpg](/assets/images/mess-baking-cpu-preview-06.jpg)
-![mess-baking-lightmass-default-06.jpg](/assets/images/mess-baking-lightmass-default-06.jpg)
+{%
+include comparison-slider.html
+first_image='assets/images/mess-baking-cpu-preview-01.jpg'
+second_image='assets/images/mess-baking-lightmass-default-01.jpg'
+description=true
+first_image_description='CPU'
+second_image_description='GPU'
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-baking-cpu-preview-02.jpg'
+second_image='assets/images/mess-baking-lightmass-default-02.jpg'
+description=true
+first_image_description='CPU'
+second_image_description='GPU'
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-baking-cpu-preview-03.jpg'
+second_image='assets/images/mess-baking-lightmass-default-03.jpg'
+description=true
+first_image_description='CPU'
+second_image_description='GPU'
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-baking-cpu-preview-04.jpg'
+second_image='assets/images/mess-baking-lightmass-default-04.jpg'
+description=true
+first_image_description='CPU'
+second_image_description='GPU'
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-baking-cpu-preview-05.jpg'
+second_image='assets/images/mess-baking-lightmass-default-05.jpg'
+description=true
+first_image_description='CPU'
+second_image_description='GPU'
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-baking-cpu-preview-06.jpg'
+second_image='assets/images/mess-baking-lightmass-default-06.jpg'
+description=true
+first_image_description='CPU'
+second_image_description='GPU'
+%}
 
 # Networking
 
