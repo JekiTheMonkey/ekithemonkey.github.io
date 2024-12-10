@@ -1,0 +1,14 @@
+<script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+<style type="text/css">
+  img-comparison-slider {
+    --divider-width: 2px;
+    --divider-color: #c0c0c0;
+    --default-handle-opacity: 0.3;
+  }
+</style>
+
+<img-comparison-slider>
+  <img slot="first" src="{{ site.url }}/{{ include.first_image }}" alt="Before" />
+  <img slot="second" src="{{ site.url }}/{{ include.second_image }}" alt="After" />
+</img-comparison-slider>
