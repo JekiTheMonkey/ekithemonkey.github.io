@@ -42,9 +42,9 @@ I did to optimize my game
 I immediately started the project by switching Global Illumination from Lumen to None, Reflections from Lumen to 
 Screen Space, Virtual Shadow Maps to Shadow Maps, disabling Nanite, and switching Anti Aliasing method from TSR to TAA.
 
-With this setup, all the environment that I was making was only relying on static lighting. For the first few weeks 
-of development, I was relying on preview CPU bake. It was giving great results for a 30-second bake; I don't think 
-that any play-tester even noticed that shadows were low quality.
+With this setup, all the environment that I was making was only relying on static lighting and reflection captures. 
+For the first few weeks of development, I was relying on preview CPU bake. It was giving great results for a 
+30-second bake; I don't think that any play-tester even noticed that shadows were low quality.
 
 ![mess-preview-bake](/assets/images/mess-preview-bake.jpg)
 
