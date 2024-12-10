@@ -133,7 +133,7 @@ High settings, but not all of them. High settings, on the other hand, take aroun
 environment on my Ryzen 7 7700X. 
 
 I wanted to see whether I can get perfect baking, so I decided to try out Lightmass. The first thing to mention 
-right away is that you must use DX12 in the editor and have hardware raytracing enabled to even start baking 
+is that you must use DX12 in the editor and have hardware raytracing enabled to even start baking 
 anything. Switching the default RHI to DX12 also means that users are going to run the game using that, which will 
 lead to losing the performance that we gain by using DX11. To still use DX11 in the packaged build, I simply added 
 that as a default launch argument in Steam Works, but I still use DX12 in the editor.
@@ -159,14 +159,14 @@ result is perfect. Here's the comparison between CPU Preview and Default Lightma
 # Networking
 
 When playing as a listen-server, you have a lot of additional logic running to perform authoritative actions and 
-replication. In my case, the game thread was getting to around 5ms with 3 connected clients. In my game I have 
+replication. In my case, the game thread was getting to around 5ms with 3 connected clients. I have 
 around 400 replicated actors; there are food plates, drinks and crates players can carry around, pickups to interact 
-with, doors to open, engines to refill, CCTVs to use and so on. 
+with, doors to open, engines to refill, CCTVs to watch and so on. 
 
 Most of them might never be even touched throughout an entire play session, whereas others might be used for only a few 
 seconds; this makes them a perfect candidate to apply the concept dormancy on. By default, the engine will check 
 whether the state of a particular replicated property on an actor has changed, and send that to all the relevant 
-clients in case the value changed. However, in that it didn't change, nothing will happen, that means that we 
+clients in case the value did change. However, in case that it didn't change, nothing will happen; that means that we 
 effectively did some useless work.
 
 Epic covered the concept of dormancy on their 
@@ -179,7 +179,7 @@ dormancy, which means that it will replicate that property, and switch to Dorman
 In case you don't have anything else but setters when it comes to replication of your actor, you don't have to do 
 anything else but select a different dormancy policy.
 
-Some actors that have a replicated timeline require you to set the dormancy to Awake All when the timeline starts 
+Some actors that have a replicated timeline require you to set the dormancy to Awake when the timeline starts 
 playing, and to Dormant All when it's finished. Other than that, my setup didn't require any other actions to get 
 the dormancy working on all my replicated actors.
 
