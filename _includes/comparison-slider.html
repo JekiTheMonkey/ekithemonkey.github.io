@@ -36,10 +36,14 @@
 <img-comparison-slider class="slider-example-split-line">
   <figure slot="first" class="before">
     <img width="100%" src="{{ site.url }}/{{ include.first_image }}">
-    <figcaption>{{ include.first_image_description | default: "Before" }}</figcaption>
+    {% if include.description != false %}
+      <figcaption>{{ include.first_image_description | default: "Before" }}</figcaption>
+    {% endif %}
   </figure>
   <figure slot="second" class="after">
     <img width="100%" src="{{ site.url }}/{{ include.second_image }}">
-    <figcaption>{{ include.second_image_description | default: "After" }}</figcaption>
+    {% if include.description != false %}
+      <figcaption>{{ include.second_image_description | default: "After" }}</figcaption>
+    {% endif %}
   </figure>
 </img-comparison-slider>
