@@ -5,8 +5,8 @@ start locally:
 
 ## comparison-slider (should use ordinary quotes on filepaths):
 
-first_image_description and second_image_description is not required (by default its Before/After)
-description by default is true (do not use quotas)
+1. first_image_description and second_image_description is not required (by default its Before/After)
+2. description by default is true (do not use quotas)
 ```
 {%
   include comparison-slider.html
