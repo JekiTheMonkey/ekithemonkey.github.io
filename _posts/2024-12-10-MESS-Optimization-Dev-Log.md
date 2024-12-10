@@ -79,10 +79,23 @@ I found out that I can move the RHI computations on a different thread using `r.
 game did benefit from that. The gain is dependent on a context; here are two comparisons between with 
 `r.RHIThread. Enable 1` and `r.RHIThread.Enable 0` (1 has the RHIT on the right side, and 0 does not)
 
-![mess-rhit-0-01](/assets/images/mess-rhit-0-01.jpg)
-![mess-rhit-1-01](/assets/images/mess-rhit-1-01.jpg)
-![mess-rhit-0-02](/assets/images/mess-rhit-0-02.jpg)
-![mess-rhit-1-02](/assets/images/mess-rhit-1-02.jpg)
+{%
+include comparison-slider.html
+first_image='assets/images/mess-rhit-0-01.jpg'
+second_image='assets/images/mess-rhit-1-01.jpg'
+description=true
+first_image_description='No RHIT'
+second_image_description='RHIT'
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-rhit-0-02.jpg'
+second_image='assets/images/mess-rhit-1-02.jpg'
+description=true
+first_image_description='No RHIT'
+second_image_description='RHIT'
+%}
 
 In the first example, the boost is around 0.25ms, whereas in the second one it's around 0.8ms!
 
@@ -107,11 +120,32 @@ more than around 0.2ms in full HD.
 
 With those settings exposed, I decided to see how it performs with different profiles.
 
-![mess-cells-all](/assets/images/mess-cells-all.jpg)
-![mess-cells-ultra-only](/assets/images/mess-cells-ultra-only.jpg)
-![mess-cafeteria-all](/assets/images/mess-cafeteria-all.jpg)
-![mess-cafeteria-ultra-only](/assets/images/mess-cafeteria-ultra-only.jpg)
-![mess-cafeteria-min](/assets/images/mess-cafeteria-min.jpg)
+{%
+include comparison-slider.html
+first_image='assets/images/mess-cells-all.jpg'
+second_image='assets/images/mess-cells-ultra-only.jpg'
+description=false
+first_image_description=''
+second_image_description=''
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-cafeteria-all.jpg'
+second_image='assets/images/mess-cafeteria-ultra-only.jpg'
+description=false
+first_image_description=''
+second_image_description=''
+%}
+
+{%
+include comparison-slider.html
+first_image='assets/images/mess-cafeteria-all.jpg'
+second_image='assets/images/mess-cafeteria-min.jpg'
+description=false
+first_image_description=''
+second_image_description=''
+%}
 
 Testing that on the said GT 1030 that player had, they were getting around 200 FPS on low settings with all the 
 mentioned features disabled. We didn't profile that much since it's more than enough to play. I also tried to run 
