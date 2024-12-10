@@ -73,7 +73,9 @@ whatsoever; at that point I was focused on the gameplay rather that settings lik
 already performing very good on all the devices we had so far.
 
 I decided to push further and find out how else I could improve that for the sake of optimization. After reading 
-some more, I found out that I can move the RHI computations on a different thread using `r.RHIThread.Enable 1`. The 
+some more 
+[documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/parallel-rendering-overview-for-unreal-engine?application_version=5.4), 
+I found out that I can move the RHI computations on a different thread using `r.RHIThread.Enable 1`. The 
 game did benefit from that. The gain is dependent on a context; here are two comparisons between with 
 `r.RHIThread. Enable 1` and `r.RHIThread.Enable 0` (1 has the RHIT on the right side, and 0 does not)
 
@@ -114,6 +116,11 @@ With those settings exposed, I decided to see how it performs with different pro
 Testing that on the said GT 1030 that player had, they were getting around 200 FPS on low settings with all the 
 mentioned features disabled. We didn't profile that much since it's more than enough to play. I also tried to run 
 that on my old Ryzen 5 2400g with no dedicated GPU, and it was giving around 100 FPS. 
+
+This could be extended even further with 
+[Forward Rendering](https://dev.epicgames.com/documentation/en-us/unreal-engine/forward-shading-renderer-in-unreal-engine) 
+since I don't use complex materials, but I was already satisfied with the result, so I avoided spending time on 
+learning more about it.
 
 Needless to say that getting more and more players on the server will decrease the performance, and make the game 
 CPU bound for the listen-server. However, it's a good result for the little effort that was made to optimize that.
@@ -190,3 +197,14 @@ fix the ones that give you the most profit with the least amount of effort.
 The majority of the tweaks take a bit more time and knowledge relatively to checking a single checkbox for Lumen and 
 its related settings, but the difference is huge. 
 It would've not worked as good as it did if my environment would've been dynamic, but it is not.
+
+## Resources
+
+- [Graphics Profiling](https://www.youtube.com/watch?v=H9Yb8Y2-Kng&list=PLF8ktr3i-U4A7vuQ6TXPr3f-bhmy6xM3S)
+- [Unreal Insights](https://www.youtube.com/watch?v=GuIav71867E)
+- [General Optimization](https://www.tomlooman.com/wp-content/uploads/2022/11/Unreal-Engine-Game-Optimization-on-a-Budget.pdf)
+- [Real Time Rendering](https://zuru.tech/blog/real-time-rendering-and-unreal-engine-4)
+- [Forward Rendering](https://dev.epicgames.com/documentation/en-us/unreal-engine/forward-shading-renderer-in-unreal-engine)
+- [Parellel Rendering](https://dev.epicgames.com/documentation/en-us/unreal-engine/parallel-rendering-overview-for-unreal-engine)
+- [Dormancy](https://dev.epicgames.com/documentation/en-us/unreal-engine/actor-network-dormancy-in-unreal-engine)
+- [Relevancy](https://dev.epicgames.com/documentation/en-us/unreal-engine/actor-relevancy-in-unreal-engine)
