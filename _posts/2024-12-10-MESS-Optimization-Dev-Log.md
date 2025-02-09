@@ -29,8 +29,9 @@ Some people think that Unreal 5 is way less performant than 4, but that's not th
 for both the versions, they will perform relatively the same; it's a matter of knowing what you have to toggle. 
 There are a lot of settings, but if you know what to toggle on or off, you'll get what you want.
 
-Currently, I'm working on my upcoming title called "MESS". It's a multiplayer jailbreak game with a static 
-environment: no lights switching on or off (except flashlight) and no geometry creation/removal on runtime.
+Currently, I'm working on my [upcoming title called "MESS"](https://store.steampowered.com/app/3330050/). 
+It's a multiplayer jailbreak game with a static environment: no lights switching on or off (except flashlight) 
+and no geometry creation/removal on runtime.
 
 ```
 This article is not meant to explain all the minor details, but rather share my experience and roughly present what 
@@ -50,7 +51,7 @@ For the first few weeks of development, I was relying on preview CPU bake. It wa
 
 # Default RHI
 
-With just that, I already was getting around 250 FPS in non-native full HD on a RTX 3060. I was still GPU bound 
+With just that, I already was getting around 250 FPS in native full HD on a RTX 3060. I was still GPU bound 
 client-side at the time. Listen server-side, however, I was CPU bound in case I got multiple players on the server. 
 I'll talk about some networking optimization I've done so far towards the end.
 
@@ -158,6 +159,23 @@ learning more about it.
 
 Needless to say that getting more and more players on the server will decrease the performance, and make the game 
 CPU bound for the listen-server. However, it's a good result for the little effort that was made to optimize that.
+
+## February 2025 Update
+
+As I'm getting closer and closer to the [game release](https://store.steampowered.com/app/3330050/), I started packaging
+the game in shipping, and the performance difference is huge, which I didn't expect.
+
+Above, you can see the cafeteria screenshot where I was getting around 260 FPS with all the graphics features I'm using 
+in my game enabled; that was in "development" package configuration. Using "shipping" I'm getting around 370 FPS on 
+the very same hardware with no graphical changes.
+
+Previously, when I was playing the game in my native 3440x1440 I was getting a bit less than 200 FPS in many areas. 
+However, now that I'm using shipping build, I'm constantly getting over 300 FPS, getting up to 400 in smaller rooms 
+compared to the cafeteria.
+
+![mess-shipping-cafeteria](/assets/images/mess-shipping-cafeteria.png)
+
+![mess-shipping-cafeteria-fps](/assets/images/mess-shipping-cafeteria-fps.png)
 
 # CPU and GPU baking
 
